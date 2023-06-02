@@ -4,7 +4,7 @@ const loadingIcon = document.getElementById("loadingIcon");
 loadingIcon.style.display = "block";
 
 fetch("https://inshorts.deta.dev/news?category=all")
-  .then((data) => {
+  .then((data) => { 
     return data.json();
   }) 
   .then((objectData) => {
@@ -21,10 +21,10 @@ fetch("https://inshorts.deta.dev/news?category=all")
               `;
     });
     let value = document.getElementById("newsContainer");
-    value.innerHTML = tableData.join("");
+    value.innerHTML = tableData;
 
     // Hide the loading icon once the data is shown
-    // loadingIcon.style.display = "none";
+    loadingIcon.style.display = "none";
   });
 
 
