@@ -21,10 +21,10 @@ fetch("https://inshorts.deta.dev/news?category=all")
               `;
     });
     let value = document.getElementById("newsContainer");
-    value.innerHTML = tableData;
+    value.innerHTML = tableData.join("");
 
     // Hide the loading icon once the data is shown
-    loadingIcon.style.display = "none";
+    // loadingIcon.style.display = "none";
   });
 
 
@@ -40,16 +40,17 @@ categorySelect.addEventListener("change", () => {
     .then(response => response.json())
     .then(objectData => {
       const newsCards = objectData.data.map(values => {
-        return `
+        return `        
           <div class="news-card">
             <div class="news-image-container">
               <img class="news-image" src="${values.imageUrl}" alt="News Image"/>
             </div>
-            <div class="news-content">              
+            
+            <div class="news-content">
+                            
               <h3 class="news-author alert alert-primary">${values.title}</h3>
               <p class="news-text">${values.content}</p>
-              <a class="read-more-link" href="#" >${values.time}</a>
-            
+              <a class="read-more-link" href="#" >${values.time}</a>            
             </div>
           </div>
         `;
@@ -60,8 +61,7 @@ categorySelect.addEventListener("change", () => {
     .catch(error => {
       console.log("Error fetching API data:", error);
     });
-    // loadingIcon.style.display = "none";
+    loadingIcon.style.display = "none";
 });
 
-// 555555555555555555555555555555555555555555555\\
-{/* <button class="like-button" onclick="saveToLocalStorage('${values.content}')">Lok</button> */}
+
