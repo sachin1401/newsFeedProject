@@ -13,6 +13,16 @@ body{
   margin-bottom: 1.5%;
   box-shadow: 0 0 15px 5px rgba(46, 101, 169, 0.5);
 }
+footer{
+  background-color: #0660a9;
+}
+nav{
+  background-color: #0660a9;
+}
+marquee{
+  width:"100%"; 
+  direction:"right";
+}
 /* footer {
   position: fixed;
   left: 0;
